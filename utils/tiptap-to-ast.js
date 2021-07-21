@@ -1,24 +1,17 @@
 import { kebabCase } from 'scule'
-const marks = {
-  bold: node => ({
-    type: 'strong',
-    props: {},
+const createNodeWithType = type => (node, { attrs }) => {
+  return {
+    type,
+    props: attrs || {},
     children: [node]
-  }),
-  link: (node, { attrs }) => {
-    return {
-      type: 'link',
-      props: attrs || {},
-      children: [node]
-    }
-  },
-  code: (node, { attrs }) => {
-    return {
-      type: 'inlineCode',
-      props: attrs || {},
-      value: node.value
-    }
   }
+}
+const marks = {
+  italic: createNodeWithType('emphasis'),
+  strike: createNodeWithType('delete'),
+  bold: createNodeWithType('strong'),
+  link: createNodeWithType('link'),
+  code: createNodeWithType('inlineCode')
 }
 const handlers = {
   doc: node => ({

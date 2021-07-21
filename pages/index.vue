@@ -16,7 +16,7 @@ import { astToTiptap } from '~/utils/ast-to-tiptap'
 export default {
   data () {
     const markdown = `# Hello
-Edit me
+Edit ~~me~~ _me_
 
 - I'm a list
 - With two **items**

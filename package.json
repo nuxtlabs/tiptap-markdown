@@ -11,7 +11,9 @@
     "@tiptap/vue-2": "^2.0.0-beta.39",
     "mdast-util-to-markdown": "0.6.5",
     "nuxt": "^2.15.7",
+    "remark-gfm": "^1.0.0",
     "remark-parse": "^9.0.0",
+    "remark-stringify": "^9.0.1",
     "scule": "^0.2.1",
     "unified": "9.2.2"
   }

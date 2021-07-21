@@ -35,9 +35,11 @@ const handlers = {
     _node.marks.push({ type, attrs: node.props })
     return _node
   },
-  'strong': node => handlers.markNode(node, 'bold'),
-  'link': node => handlers.markNode(node, 'link'),
-  'inlineBode': node => handlers.markNode(node, 'code'),
+  emphasis: node => handlers.markNode(node, 'italic'),
+  strong: node => handlers.markNode(node, 'bold'),
+  link: node => handlers.markNode(node, 'link'),
+  inlineBode: node => handlers.markNode(node, 'code'),
+  delete: node => handlers.markNode(node, 'strike'),
   em: node => handlers.markNode(node, 'italic')
 }
 function visit(node) {
