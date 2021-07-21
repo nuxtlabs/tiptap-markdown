@@ -1,0 +1,18 @@
+{
+  "name": "tiptap-markdown",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "dev": "nuxt"
+  },
+  "dependencies": {
+    "@tiptap/starter-kit": "^2.0.0-beta.82",
+    "@tiptap/vue-2": "^2.0.0-beta.39",
+    "mdast-util-to-markdown": "0.6.5",
+    "nuxt": "^2.15.7",
+    "remark-parse": "^9.0.0",
+    "scule": "^0.2.1",
+    "unified": "9.2.2"
+  }
+}
