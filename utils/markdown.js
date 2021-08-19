@@ -3,6 +3,7 @@ import unified from 'unified';
 import parse from 'remark-parse'
 import remarkGfm from 'remark-gfm'
 import strigify from 'remark-stringify'
+import components from './components'
 
 function compiler() {
   this.Compiler = function(root) {
@@ -11,7 +12,10 @@ function compiler() {
 }
 
 export function markdownToAst(markdown) {
-  let stream = unified().use(parse).use(remarkGfm)
+  let stream = unified()
+  .use(parse)
+  .use(components)
+  .use(remarkGfm)
 
   const file = stream.use(compiler).processSync({ contents: markdown })
   return file.result
@@ -27,6 +31,7 @@ export function astToMarkdown(ast) {
   let stream = unified()
     .use(jsonParser)
     .use(remarkGfm)
+    .use(components)
     .use(strigify, {
       bullet: '-'
     })

@@ -46,6 +46,12 @@ function visit(node) {
   const type = node.type
   if (handlers[type]) {
     node = handlers[type](node)
+  } else {
+    node.attrs = {
+      props: node.attributes,
+      _tag: node.name
+    }
+    node.content = (node.children || []).map(visit)
   }
   return node
 }

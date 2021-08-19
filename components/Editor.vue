@@ -5,6 +5,7 @@
 <script>
 import { Editor, EditorContent } from '@tiptap/vue-2'
 import { defaultExtensions } from '@tiptap/starter-kit'
+import ContainerComponent from '~/utils/tiptap/containerComponent'
 
 export default {
   components: {
@@ -39,7 +40,10 @@ export default {
 
   mounted() {
     this.editor = new Editor({
-      extensions: defaultExtensions(),
+      extensions: [
+        ...defaultExtensions(),
+        ...ContainerComponent
+      ],
       content: this.value
     })
     this.editor.on('update', () => {

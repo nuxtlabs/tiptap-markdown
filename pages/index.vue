@@ -18,6 +18,10 @@ export default {
     const markdown = `# Hello
 Edit ~~me~~ _me_
 
+::test{a="d"}
+# This is test components
+::
+
 - I'm a list
 - With two **items**
 `
